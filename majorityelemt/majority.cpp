@@ -47,4 +47,24 @@ public:
 //best 
 //Moore's Voting Algorithm is like a fair way to decide things when there are different choices, 
 //and you want to go with what most people like. It helps make decisions together!
-
+class Solution {
+public:
+    int majorityElement(vector<int>& nums) {
+        int count =0;
+        int n = nums.size();
+        int ele;
+        for(int i=0;i<n;i++){
+            if(count == 0){
+               // count =1;
+                ele = nums[i];
+            }
+            if(ele == nums[i]){
+                count++;
+            }
+            else{
+                count--;
+            }
+        }
+        return ele;
+    }
+};
